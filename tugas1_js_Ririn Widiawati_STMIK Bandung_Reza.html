@@ -1,0 +1,31 @@
+<script language ="javascript">
+    // mendeklarasikan var pegawai, jabatan, status
+	var nama_pegawai = "Ririn Widiawati";
+	var jabatan ="Manager";
+	var status  ="Menikah";
+
+    //struktur kendali
+	if (jabatan == 'Manager') {
+		gapok = 15000000;
+	}else if (jabatan == 'Asisten Manager') {
+		gapok = 10000000;
+	}else if (jabatan == 'Staff') {
+		gapok = 5000000;
+	}else {
+		gapok=0;
+	}
+	let tun_jbtn = 0.15* gapok
+	let bpjs = 0.1*gapok;
+    
+	//ternary
+	if (status == 'Menikah') tun_kk = 0.2 * gapok;
+		else tun_kk = 0;
+	let total = gapok + tun_jbtn + bpjs + tun_kk;	
+
+    //cetak hasil
+	document.write("<br><h2>DATA PEGAWAI</h2>" +
+		"Nama Pegawai : " +nama_pegawai +
+		"<br> Jabatan : " +jabatan +
+		"<br> Status  : " +status);
+	document.write(`<table cellpadding='10' cellspacing='0' width='30%' border='1'><thead bgcolor='orange'><th>Data</th> <th>Keterangan</th></thead> <tr><td>Gaji Pokok</td> <td>Rp. ${gapok}</td></tr> <tr><td>Tunjangan Jabatan</td> <td>Rp. ${tun_jbtn}</td></tr> <tr><td>BPJS</td> <td>Rp. ${bpjs} </td></tr> <tr><td>Tunjangan Keluarga</td> <td>Rp. ${tun_kk}</td></tr> <tfoot bgcolor='orange'><th>Total</th> <th align='left'>Rp. ${total}</th></table>`)
+</script>
