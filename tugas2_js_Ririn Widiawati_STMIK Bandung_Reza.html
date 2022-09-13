@@ -1,0 +1,75 @@
+<h2 align="center">DATA PEGAWAI</h2>
+<table align="center" cellpadding="10" border="1" width="100%">
+    <thead>
+        <tr bgcolor="#009EC1">
+            <th>No.</th>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Agama</th>
+            <th>Gaji Pokok</th>
+            <th>Tunjangan Jabatan</th>
+            <th>Tunjangan Kesehatan</th>
+            <th>Gaji Kotor</th>
+            <th>Zakat Profesi</th>
+            <th>Take Home Pay</th>
+        </tr>
+        <tbody>
+            <script language="javascript">   
+                // deklarasi var jabatan dan gapok
+                var no;
+                for(no=1; no<=100; no++){
+                
+                // jabatan
+                var jabatan="Manager";
+                if (no > 75 && no <= 100) jabatan = "Staff";
+                else if (no > 50 && no <= 75) jabatan = "Supervisior";
+                else if (no > 25 && no <= 50) jabatan = "Asisten Manager";
+                else jabatan = "Manager";
+
+                let agama = "Muslim";
+				no % 2 == 1 ? agama : agama = "Non Muslim";
+				const warna = agama === "Muslim" ? "#00ECFF" : "#FFFB00";
+
+                //gapok
+                let gapok = 0;
+                switch(jabatan){
+                    case 'Manager' : gapok = 15000000; break;
+                    case 'Asisten Manager' : gapok = 10000000; break;
+                    case 'Supervisior' : gapok = 7000000; break;
+                    case 'Staff' : gapok = 4000000; break;
+                    default : gapok = 0; 
+                    }
+
+                    //tunjangan
+                    let tunjab = gapok * 0.2;
+                    let tunkes = gapok * 0.1;
+                    let gator = gapok + tunjab + tunkes;
+
+                    // kondisi jika pegawai ber-agama 'muslim' dan gaji kotor nya min 7 juta, ada zakat profesi sebesar 2,5% dari gator
+                    // jika pegawai ber-agama 'non muslim' dan pegawai 'muslim' tetapi gator nya kurang dari 7 juta, zakat profesi nya 0
+                    let zaprof = 0;
+                    if (agama == "Muslim" && gator >= 7000000) zaprof = gator * 0.025 ;
+                    else zaprof = 0;
+
+                    // take home pay
+                    const thpay = gator - zaprof;
+
+                    //cetak
+                    document.write(`<tr bgcolor=${warna}>
+					<td>${no}</td>
+					<td>Pegawai${no}</td>
+					<td>${jabatan}</td>
+					<td>${agama}</td>
+					<td>Rp. ${gapok}</td>
+					<td>Rp. ${tunjab}</td>
+					<td>Rp. ${tunkes}</td>
+					<td>Rp. ${gator}</td>
+					<td>Rp. ${zaprof}</td>
+					<td>Rp. ${thpay}</td>
+					</tr>`)
+                }
+            </script>
+        </tbody>
+    </thead>
+</table>
+
