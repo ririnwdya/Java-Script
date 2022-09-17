@@ -67,18 +67,18 @@ Hitunglah pembelian barang berdasarkan kurs valas yang dipilih.
 Hasilnya ditempatkan pada paragraf yang ber-id-kan isi
 */
 function konversiKurs(){ 
-    let namaPembeli = document.getElementById("frm").nama.value;
-    let namaBarang = document.getElementById("frm").barang.value;
-    let harga = document.getElementById("frm").harga.value;
-    let jumlah = document.getElementById("frm").jumlah.value;
+    let pembeli = document.getElementById("frm").nama.value;
+    let brg = document.getElementById("frm").barang.value;
+    let hrg = document.getElementById("frm").harga.value;
+    let jml = document.getElementById("frm").jumlah.value;
     let valuta = document.getElementById('frm').valas.value;
-    let total = harga / valuta * jumlah;
+    let total = hrg / valuta * jml;
 
     let data = `DATA PEMBELIAN 
-    <br/>Nama Pembeli  : ${namaPembeli}
-    <br/>Nama Barang   : ${namaBarang}
-    <br/>Harga Barang  :Rp. ${harga}
-    <br/>Jumlah Barang : ${jumlah}
+    <br/>Nama Pembeli  : ${pembeli}
+    <br/>Nama Barang   : ${brg}
+    <br/>Harga Barang  :Rp. ${hrg}
+    <br/>Jumlah Barang : ${jml}
     <br/>Valuta Asing  : ${valuta}
     <br/>Total Bayar   : $ ${total.toFixed(2)}`;
 
