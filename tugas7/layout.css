@@ -1,0 +1,31 @@
+/* CSS */
+* { /* universal */
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #a0b0af; 
+  }
+.header {
+    background-image:url('./gambar/bg5.jpg');
+    background-position:center;
+    padding: 30px;
+    text-align: center;
+    font-family:Verdana, Tahoma, sans-serif;
+    color:#FFFF;  
+}
+/* Style the top navigation bar */
+.box1{
+    width:100%;
+    height: 20px;
+    background:#B25D1A;
+}
+.button-container{
+  display : flex;
+  flex-direction: row;
+  
+}
+/* #Ayam{
+position: fixed;
+} */
